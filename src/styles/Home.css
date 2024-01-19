@@ -1,0 +1,48 @@
+h2,
+h3 {
+    margin: 0;
+}
+
+header {
+    width: 85vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pageLinks {
+    display: flex;
+    gap: 15px;
+}
+
+.card {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    max-width: 250px;
+    height: 80%;
+    border-style: solid;
+    border-color: white;
+}
+
+.card:hover {
+    border-color: black;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 250px;
+}
+
+.card h2 {
+    font-size: 1.25em;
+}
+
+.cardHolder {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
