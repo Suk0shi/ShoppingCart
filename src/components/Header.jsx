@@ -9,7 +9,7 @@ function Header({cartNum}) {
     <>
       <header>
         <div className="title">
-            <h1>Shop Name</h1>
+            <h1>FakeStore</h1>
         </div>
         <div className="pageLinks">
             <Link to="/home">

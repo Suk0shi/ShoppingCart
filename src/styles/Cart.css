@@ -1,0 +1,19 @@
+.cartCards {
+    display: grid;
+    gap: 10px;
+}
+
+.cartCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 8px;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+}
+
+.cartCard img {
+    max-width: 100px;
+}

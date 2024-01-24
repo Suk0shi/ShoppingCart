@@ -5,6 +5,7 @@ h3 {
 
 header {
     width: 85vw;
+    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,5 +45,30 @@ header {
 .cardHolder {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
+    gap: 15px;
+}
+
+.cardContainer {
+    display: grid;
+    justify-content: center;
+}
+
+.homePage {
+    background-image: url(../assets/pexels-stephan-seeber-1261728.jpg);
+    height: 80vh;
+    width: 100vw;
+    background-size: cover;
+    margin: 0 -100px;
+    margin-bottom: -100px;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+}
+
+.homePage h3 {
+    background-color: black;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+
 }

@@ -7,7 +7,7 @@ const useImageURL = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-      fetch('https://fakestoreapi.com/products?limit=5', { mode: "cors" })
+      fetch('https://fakestoreapi.com/products?limit=10', { mode: "cors" })
         .then((response) => {
           if (response.status >= 400) {
             throw new Error("server error");
@@ -27,21 +27,22 @@ function Shop({cartNum, cartHandler}) {
   const { imageURL, error, loading } = useImageURL();
   console.log(imageURL)
 
-  function Card({ cardNumber, cartHandler }) {
-    const handleClick = () => {
-      cartHandler(imageURL[cardNumber]);
-    };
-
+  function Card({ cartHandler }) {
+    
   if (error) return <p>A network error was encountered</p>;
   if (loading) return <p>Loading...</p>;
   return (
-    <div className='cardDiv' onClick={handleClick}>
-      <div className="card">
-        <h2>{imageURL[cardNumber].title}</h2>
-        <img src={imageURL[cardNumber].image} alt="" />
-        <h3>£{imageURL[cardNumber].price}</h3>
-      </div>
-    </ div>
+    <div className='cardHolder'>
+      {imageURL.map((value) => {
+        return (
+          <div className='card' onClick={(e)=>cartHandler(value)}>
+            <h2>{value.title}</h2>
+            <img src={value.image} alt={"Image of "+value.title} />
+            <h3>{"£" + value.price}</h3>
+          </div>
+        );
+      })}
+    </div>
   )
 
   }
@@ -49,13 +50,10 @@ function Shop({cartNum, cartHandler}) {
   return (
     <>
       <Header cartNum = {cartNum}></Header>
-      <div className="cardHolder">
-        <Card cardNumber={"0"} cartHandler={cartHandler} ></Card>
-        <Card cardNumber={"1"} cartHandler={cartHandler} ></Card>
-        <Card cardNumber={"2"} cartHandler={cartHandler} ></Card>
-        <Card cardNumber={"3"} cartHandler={cartHandler} ></Card>
-        <Card cardNumber={"4"} cartHandler={cartHandler} ></Card>
+      <div className="cardContainer">
+        <Card cartHandler={cartHandler} ></Card>
       </div>
+      
       
     </>
   )

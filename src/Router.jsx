@@ -32,7 +32,7 @@ const Router = () => {
     },
     {
       path: "cart",
-      element: <Cart cartNum={cartNum}/>,
+      element: <Cart cartNum={cartNum} cart={cart}/>,
     },
   ]);
 
