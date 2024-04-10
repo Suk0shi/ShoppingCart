@@ -26,10 +26,10 @@ function Cart({cartNum, cart}) {
     <>
       <Header cartNum = {cartNum}></Header>
       {(cartNum === 0)?
-      <>
+      <div className='emptyCart'>
         <h1>Your cart is empty</h1>
         <Icon path={mdiCartOff} size={3} />
-      </>: 
+      </div>: 
       <Card cart={cart}></Card>}
     </>
   )

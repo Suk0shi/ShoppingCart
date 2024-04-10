@@ -9,6 +9,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    justify-self: center;
 }
 
 .pageLinks {
@@ -55,20 +56,23 @@ header {
 
 .homePage {
     background-image: url(../assets/pexels-stephan-seeber-1261728.jpg);
-    height: 80vh;
     width: 100vw;
     background-size: cover;
-    margin: 0 -100px;
-    margin-bottom: -100px;
     overflow: hidden;
     display: grid;
     align-items: center;
+
 }
 
 .homePage h3 {
-    background-color: black;
-    margin: 20px;
-    border-radius: 20px;
-    padding: 20px;
+    color: black;
+    font-size: 90px;
+    font-weight: 900;
+    align-self: self-end;
+}
 
+.homePage img {
+    justify-self: center;
+    height: 400px;
+    align-self: self-start;
 }
